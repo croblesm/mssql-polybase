@@ -27,14 +27,13 @@ docker container run \
 Let's connect to the container we just created
 
 ```Docker
-docker exec -it sql-polybase "bash"
+docker exec -it sql-polybase "sqlcmd -U sa -P '_SqLr0ck$_'"
 ```
 
 Configuring polybase for this SQL Server container
 
 ```SQL
-//opt/mssql-tools/bin/sqlcmd -U sa -P '_SqLr0ck$_'
 exec sp_configure @configname = 'polybase enabled', @configvalue = 1;
+GO
 RECONFIGURE;
-
 ```
