@@ -25,8 +25,6 @@ RUN apt-get update && \
     # Cleanup the Dockerfile
     apt-get clean && \
     rm -rf /var/lib/apt/lists
-    
-# Adding SQL Server tools to $PATH
-ENV PATH=$PATH:/opt/mssql-tools/bin
+
 # Run SQL Server process
 CMD /opt/mssql/bin/sqlservr
