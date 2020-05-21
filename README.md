@@ -39,7 +39,7 @@ GO
 RECONFIGURE;
 GO
 ```
-In case you want to do a quick test, you can follow the next quick test:
+In case you want to make sure Polybase is working. You can use the following quick guide:
 
 ```sql
 CREATE DATABASE PolyTestDb
@@ -70,7 +70,7 @@ SELECT * FROM T1_external
 GO
 ```
 
-The quick test above, and the base image was taken from the Microsoft SQL Server Docker GitHub repository:
+This customized image was created based on the original created by the Microsoft SQL Server team:
 https://github.com/microsoft/mssql-docker/tree/master/linux/preview/examples/mssql-polybase
 
 ## Questions?
