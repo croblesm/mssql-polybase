@@ -2,13 +2,16 @@
 
 ## Build image
 
-This customized Docker image will let 1.5 GBs
+Let's create a customized SQL Server polybase image with Ubuntu 16.04 and SQL Server 2019.
 
 ```Docker
 docker build . -t mssql-polybase -f Dockerfile
 ```
+This Docker image size is around 1.5 GBs.
 
 ## Create container
+
+Let's create a new SQL Server container based on the previous ```mssql-polybase``` created in the previous step.
 
 ```Docker
 docker container run \
@@ -21,12 +24,17 @@ docker container run \
     
 ## Configure polybase
 
+Let's connect to the container we just created
+
 ```Docker
 docker exec -it sql-polybase "bash"
 ```
 
+Configuring polybase for this SQL Server container
+
 ```SQL
+//opt/mssql-tools/bin/sqlcmd -U sa -P '_SqLr0ck$_'
 exec sp_configure @configname = 'polybase enabled', @configvalue = 1;
 RECONFIGURE;
-sqlcmd -U sa -P '123MyP@assword'
+
 ```
